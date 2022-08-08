@@ -155,6 +155,7 @@
             Array.Copy(data, index, result, 0, length);
             return result;
         }
+
         public static List<int> Find_Quartiles(int[] arr)
         {
             int n = arr.Length;
@@ -164,6 +165,52 @@
                 return new List<int> { Median(arr.SubArray(0, mid), mid), Median(arr, n), Median(arr.SubArray(mid + 1, mid), mid) };
             else
                 return new List<int> { Median(arr.SubArray(0, mid), mid), Median(arr, n), Median(arr.SubArray(mid, mid), mid) };
+        }
+
+        private static double Median(double[] nums, int n)
+        {
+            double median = 0.0;
+
+            if (n % 2 == 0)
+                median = (nums[(n / 2) - 1] + nums[(n / 2)]) / 2;
+            else
+                median = nums[(n / 2)];
+
+            return median;
+        }
+
+        public static double[] SubArray(this double[] data, int index, int length)
+        {
+            double[] result = new double[length];
+            Array.Copy(data, index, result, 0, length);
+            return result;
+        }
+
+        public static double Find_InterquartileRange(int[] values, int[] freqs)
+        {
+            List<double> s = new List<double>();
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                for (int j = 0; j < freqs[i]; j++)
+                {
+                    s.Add(values[i]);
+                }
+            }
+
+            int n = s.Count;
+            int mid = n / 2;
+            s.Sort();
+
+            double q1 = Median(s.ToArray().SubArray(0, mid), mid);
+            double q3;
+
+            if (n % 2 != 0)
+                q3 = Median(SubArray(s.ToArray(), mid + 1, mid), mid);
+            else
+                q3 = Median(SubArray(s.ToArray(), mid, mid), mid);
+
+            return Convert.ToDouble(q3 - q1);
         }
         #endregion
     }

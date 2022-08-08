@@ -197,5 +197,17 @@ namespace Tests
             Assert.Equal(result, Find_Quartiles(x.ToArray()));
             Assert.Equal(result2, Find_Quartiles(x2.ToArray()));
         }
+
+        [Fact]
+        public void Test_InterquartileRange()
+        {
+            #region Mock_1
+            int[] values = { 6, 12, 8, 10, 20, 16 };
+            int[] freqs = { 5, 4, 3, 2, 1, 5 };
+            double result = 9.0;
+            #endregion
+
+            Assert.Equal(result, Find_InterquartileRange(values, freqs));
+        }
     }
 }
