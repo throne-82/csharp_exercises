@@ -1,22 +1,23 @@
-﻿//List<int> x = new List<int> { 3, 7, 8, 5, 12, 14, 21, 13, 18 };
-//List<int> x2 = new List<int> { 3, 7, 8, 5, 12, 14, 21, 15, 18, 14 };
+﻿//class Solution
+//{
+//    static void Main(String[] args)
+//    {
+//        string myStr = Console.ReadLine().Trim();
 
+//        string[] ssize = myStr.Split(null);
+//        double l1 = Convert.ToDouble(ssize[0]);
+//        double l2 = Convert.ToDouble(ssize[1]);
 
-//var res = Exercises.Hackerrank.DaysOfStatistics.Find_Quartiles(x.ToArray());
-//var res2 = Exercises.Hackerrank.DaysOfStatistics.Find_Quartiles(x2.ToArray());
+//        double p1 = 160 + 40 * (l1 + (l1 * l1));
+//        double p2 = 128 + 40 * (l2 + (l2 * l2));
 
+//        Console.WriteLine(Math.Round(l1, 3));
+//        Console.WriteLine(Math.Round(l2, 3));
+//    }
+//}
 
-//res.ForEach(p => Console.WriteLine(p));
+string bla = "1, Arthur, Dev";
+//byte[] asciiBytes = Encoding.ASCII.GetBytes(bla);
 
-//Console.WriteLine();
-//Console.WriteLine();
-//Console.WriteLine();
-//Console.WriteLine();
-
-//res2.ForEach(p => Console.WriteLine(p));
-
-int[] values = { 6, 12, 8, 10, 20, 16 };
-int[] freqs = { 5, 4, 3, 2, 1, 5};
-
-double findInter = Exercises.Hackerrank.DaysOfStatistics.Find_InterquartileRange(values, freqs);
-Console.WriteLine(string.Format("{0:F1}", findInter));
+string[] Registro = bla.Split(',');
+Console.WriteLine("O profissional id: " + Registro[0] + " de nome" + Registro[1] + " trabalha como " + Registro[2]);

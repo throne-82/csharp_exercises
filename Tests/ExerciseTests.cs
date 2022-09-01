@@ -5,8 +5,10 @@ using static Exercises.AnagramsInAString;
 using static Exercises.MinMaxSum;
 using static Exercises.TimeConversion;
 using static Exercises.SparseArrays;
+using static Exercises.Hackerrank.LonelyInteger;
 using static Exercises.Hackerrank.DaysOfStatistics;
-
+using static Exercises.Hackerrank.FlippingBits;
+using static Exercises.Hackerrank.CountingSort;
 
 using System.Collections.Generic;
 
@@ -208,6 +210,48 @@ namespace Tests
             #endregion
 
             Assert.Equal(result, Find_InterquartileRange(values, freqs));
+        }
+
+        [Fact]
+        public void Test_LonelyInteger()
+        {
+            #region Mock_1
+            List<int> a = new() { 1, 2, 3, 4, 5, 5, 3, 2, 1 };
+            int result = 4;
+            #endregion
+
+            Assert.Equal(result, Find_LonelyInteger(a));
+        }
+
+        [Fact]
+        public void Test_FlippingBits()
+        {
+            #region Mock_1
+            long n = 2147483647;
+            long r = 2147483648;
+            #endregion
+            #region Mock_2
+            long n2 = 1;
+            long r2 = 4294967294;
+            #endregion
+            #region Mock_3
+            long n3 = 0;
+            long r3 = 4294967295;
+            #endregion
+
+            Assert.Equal(r, Find_FlippingBits(n));
+            Assert.Equal(r2, Find_FlippingBits(n2));
+            Assert.Equal(r3, Find_FlippingBits(n3));
+        }
+
+        [Fact]
+        public void Test_CountingSort()
+        {
+
+            List<int> freq = new() { 1, 1, 3, 2, 1 };
+            int[] result = new int[] { 0, 3, 1, 1 };
+
+            Assert.Equal(result, Find_CountingSort(freq));
         }
     }
 }
